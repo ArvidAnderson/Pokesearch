@@ -13,7 +13,7 @@
           </q-card-section>
           <q-card-section>
               <div class="flex text-primary" v-for="(pokemon, idx) in filterdPokemon" :key="idx">
-                <router-link :to="`/pokemon/${urlIdLookup[pokemon.name]}`">
+                <router-link :to="`/pokemon/${pokemon.name}`">
                   {{ pokemon.name }}
                 </router-link>
               </div>
@@ -32,7 +32,6 @@ export default defineComponent({
   setup () {
     const state = reactive({
       pokemons: [],
-      urlIdLookup: {},
       text: '',
       filterdPokemon: computed(() => updatePokemon())
     })
@@ -45,12 +44,8 @@ export default defineComponent({
       return state.pokemons.filter((pokemon) => pokemon.name.includes(state.text))
     }
 
-    fetch('https://pokeapi.co/api/v2/pokemon?offset?0').then(res => res.json()).then(data => {
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1000').then(res => res.json()).then(data => {
       state.pokemons = data.results
-      state.urlIdLookup = data.results.reduce((acc, cur, idx) => {
-        acc = { ...acc, [cur.name]: idx + 1 }
-        return acc
-      })
     })
 
     return { ...toRefs(state) }
