@@ -1,6 +1,7 @@
 # Pokesearch
 
 Small, fast and lightweight pokemon searcher. 
+Try it out here https://pokesearch-0000.web.app/
 
 Sourcecode in /Pokesearch 
 
