@@ -47,7 +47,7 @@ export default defineComponent({
         return []
       }
 
-      return state.pokemons.filter((pokemon) => pokemon.name.includes(state.text))
+      return state.pokemons.filter((pokemon) => pokemon.name.includes(state.text.toLowerCase()))
     }
 
     fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1000').then(res => res.json()).then(data => {
