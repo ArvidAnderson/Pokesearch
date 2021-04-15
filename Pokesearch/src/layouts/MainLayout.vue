@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536847_1280.png">
           </q-avatar>
-          <strong class="q-ml-md">Pokesearch</strong>
+          <q-btn flat color="none" padding="none" to="/" class="q-ml-md text-h6">Pokesearch</q-btn>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
