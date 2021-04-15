@@ -1,6 +1,4 @@
-# pokesearch (pokesearch)
-
-A Quasar Framework app
+# Sourcecode Pokesearch
 
 ## Install the dependencies
 ```bash
